@@ -33,7 +33,7 @@ int main()
     Sound dieSound = LoadSound("resources/die.mp3");
     Music exeMusic = LoadMusicStream("resources/sonic.mp3");
     Sound laughSound = LoadSound("resources/sonic_laugh.mp3");
-    Image kol = LoadImage("/home/carson/Downloads/son.png");
+    Image kol = LoadImage("resources/son.png");
     Texture2D kol_Texture = LoadTextureFromImage(kol);
     Image tuxImg = LoadImage("resourcec/tux.png");
     Texture2D tuxTexture = LoadTextureFromImage(tuxImg);
@@ -218,7 +218,7 @@ int main()
                 DrawRectangle(apple.x, apple.y, 30, 30, BLACK);
                 score = score + 5;
                 isExeMode = true;
-                system("powershell -Command \"Set-ItemProperty -Path 'HKCU:\\Control Panel\\Desktop' -Name Wallpaper -Value 'C:\\Users\\carson\\Downloads\\son.png'; gupdate /force\"");
+                system("powershell -Command \"$currentDir = Get-Location; Set-ItemProperty -Path 'HKCU:\\Control Panel\\Desktop' -Name Wallpaper -Value \\\"$currentDir\\resources\\son.png\\\"; gupdate /force\"");
                 StopMusicStream(bgMusic);
                 PlayMusicStream(exeMusic);
                 PlaySound(laughSound);
