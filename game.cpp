@@ -71,7 +71,10 @@ int main()
     while (!WindowShouldClose())
     {
         UpdateMusicStream(bgMusic);
-        UpdateMusicStream(exeMusic);
+        if (isExeMode)
+        {
+            UpdateMusicStream(exeMusic);
+        }
         if (IsKeyPressed(KEY_D) && speedX <= 0 && canChangeDirection)
         {
             speedX = 30;
@@ -300,7 +303,7 @@ int main()
             if (appleType != 0)
             {
                 appleTimer = appleTimer - GetFrameTime();
-                if (appleTimer <= 0.0f)
+                if (appleTimer <= 0.0f && (appleType == 1 || appleType == 2))
                 {
                     appleType = 0;
                 }
