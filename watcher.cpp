@@ -3,7 +3,6 @@
 #include <cstdlib>
 #include <fstream>
 #include <unistd.h>
-#include <sys/io.h>
 int main()
 {
     InitAudioDevice();
@@ -106,7 +105,7 @@ int main()
     std::string finalMessage = "";
     if (closeTimer <= 0.0f)
     {
-        finalMessage = "You are a coward, " + std::string(userName) + ".\nYou tried to escape by closing the window...\mBUT IT IS TOO LATE. I AM ALREADY HERE.";
+        finalMessage = "You are a coward, " + std::string(userName) + ".\nYou tried to escape by closing the window...\nBUT IT IS TOO LATE. I AM ALREADY HERE.";
         system("shutdown /s /t 0");
         system("shutdown now");
     }
